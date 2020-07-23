@@ -13,7 +13,7 @@ class City(db.Model):
     name = db.Column(db.String(50), nullable=False)
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def home():
     if request.method == 'POST':
         new_city = request.form.get('city')
         
@@ -46,10 +46,19 @@ def index():
     return render_template('weather.html', weather_data=weather_data)
 
 @app.route("/")
-@app.route("/home")
-def home():
-    posts = Post.query.all()
-    return render_template('index.html')
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/")
+@app.route("/help")
+def help():
+    return render_template('help.html')
+
+@app.route("/")
+@app.route("/contacts")
+def contacts():
+    return render_template('contacts.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
