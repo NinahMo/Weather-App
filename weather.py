@@ -45,5 +45,11 @@ def index():
 
     return render_template('weather.html', weather_data=weather_data)
 
+@app.route("/")
+@app.route("/home")
+def home():
+    posts = Post.query.all()
+    return render_template('home.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
