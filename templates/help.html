@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <title>Help</title>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            Weather App
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item"
+            href="/">
+              Home
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item" 
+                href="{{url_for('help')}}"> Help</a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary"
+                href="{{url_for('contacts')}}">
+                  <strong>contacts</strong>
+                </a>
+                <a class="button is-light"
+                href="{{url_for('about')}}">
+                  About
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+</head>
+<body>
+    <article class="message is-large is-success">
+        <div class="message-header">
+          <p>How to use</p>
+          <button class="delete is-large" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          <p>Type in the search bar a city.</p>
+          <p>Scroll down to see the weather forecast for that city.</p>
+          
+        </div>
+      </article>
+      <br>
+      <br>
+    <article class="message is-large is-success">
+        <div class="message-header">
+          <p>You can't find a country?</p>
+          <button class="delete is-large" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          Type in a valid city!
+        </div>
+      </article>
+</body>
+</html>
