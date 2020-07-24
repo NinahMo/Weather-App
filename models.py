@@ -1,4 +1,4 @@
-from .weather import db
+from weather import db
 
 class City(db.Model):
     __tablename__ = 'city'
